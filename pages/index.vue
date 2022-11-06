@@ -1,6 +1,10 @@
 <template>
   <div>
-
+    <pre>
+      {{ $config }}
+    </pre>
+    <br>
+    <br>
     <!-- <VTooltip>
       <a>Sponsor me</a>
 
@@ -29,7 +33,12 @@ export default {
         return {};
     },
 
+    asyncData({ $config }) {
+      console.log($config)
+    },
+
     created() {
+      console.log(this.$config.facebook_api_key);
       console.log(this.$name("Jon Snow"));
     },
 
